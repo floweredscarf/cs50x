@@ -1,11 +1,17 @@
 sort1 uses: Bubble Sort
 
-How do you know?: TODO
-
+How do you know?: fast with sorted.txt
+O(n^2) Ω(n)
+(n - 1) * (n - 1)
+n^2 - 2n + 1
 sort2 uses: Merge Sort
 
-How do you know?: TODO
-
+How do you know?: fast with random.txt
+O(nlog(n)) Ω(nlog(n))
+log2(n)
 sort3 uses: Selection Sort
 
-How do you know?: TODO
+How do you know?: slow
+O(n^2) Ω(n^2)
+(n - 1) + (n - 2) + (n - 3) + ... + 1
+n (n - 1) / 2

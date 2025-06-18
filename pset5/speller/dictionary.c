@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <strings.h>
 
 #include "dictionary.h"
 
@@ -25,6 +26,17 @@ node *table[N];
 bool check(const char *word)
 {
     // TODO
+    // Hash the word to obtain its hash value
+    int index = hash(word);
+    // Search the hash table at the location specified by the word’s hash value
+    for (node *cursor = table[index]; cursor != NULL; cursor = cursor->next)
+    {
+        // Return true if the word is found
+        if (strcasecmp(word, cursor->word) == 0)
+        {
+            return true;
+        }
+    }
     return false;
 }
 

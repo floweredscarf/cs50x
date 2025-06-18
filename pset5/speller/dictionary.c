@@ -72,9 +72,19 @@ bool load(const char *dictionary)
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
+// Each time size is called, iterate through the words in the hash table to count them up. Return that count.
 unsigned int size(void)
 {
     // TODO
+    int count = 0;
+    for (int i = 0; i < N; i++)
+    {
+        for (node *ptr = table[i]; ptr != NULL; ptr = ptr->next)
+        {
+            count++;
+        }
+    }
+    return count;
     return 0;
 }
 

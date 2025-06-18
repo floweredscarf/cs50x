@@ -69,6 +69,7 @@ bool load(const char *dictionary)
         node *n = malloc(sizeof(node));
         if (n == NULL)
         {
+            fclose(source);
             return false;
         }
         // Copy the word into the new node
@@ -82,7 +83,6 @@ bool load(const char *dictionary)
     // Close the dictionary file
     fclose(source);
     return true;
-    return false;
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
@@ -99,7 +99,6 @@ unsigned int size(void)
         }
     }
     return count;
-    return 0;
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
@@ -117,5 +116,4 @@ bool unload(void)
         }
     }
     return true;
-    return false;
 }
